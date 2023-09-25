@@ -5,4 +5,9 @@
     <string name="toolbar_text">Мой Дом</string>
     <string name="title">Title</string>
     <string name="house">Гостиная</string>
+    <string name="Домофон">Домофон</string>
+    <string name="Сеть">В сети</string>
+    <string name="Подъезда">Подъезд 1</string>
+    <string name="Подъезд" />
+    <string name="Подъезд2">Подъезд 2</string>
 </resources>

@@ -2,14 +2,22 @@ package com.example.finalapp.domain.repositories
 
 import com.example.finalapp.data.models.Door
 import com.example.finalapp.domain.models.DoorModel
+import com.example.finalapp.domain.utils.Resource
+import kotlinx.coroutines.flow.Flow
 
 interface DoorRepository {
 
-    suspend fun getAllDoors(): List<DoorModel>
+    suspend fun getRemoteDoors(): Flow<Resource<List<DoorModel>>>
 
-    suspend fun insertDoor(door: DoorModel) : Unit
+    fun getLocalDoors(): List<DoorModel>
 
-    suspend fun updateDoor(door: DoorModel): Unit
+    fun insertDoor(doorModel: DoorModel)
 
-    suspend fun deleteDoor(door: DoorModel) : Unit
+    fun insertLocalDoors(doorModels: List<DoorModel>)
+
+    fun updateDoor(doorModel: DoorModel)
+
+    fun updateLocalDoors(doorModels: List<DoorModel>)
+
+    fun deleteDoor(doorModel: DoorModel)
 }

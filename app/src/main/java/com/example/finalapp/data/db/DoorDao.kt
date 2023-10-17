@@ -1,22 +1,27 @@
 package com.example.finalapp.data.db
 
 import androidx.room.*
+import com.example.finalapp.data.dtos.DoorDto
 import com.example.finalapp.data.models.Door
 
 @Dao
 interface DoorDao {
 
-    @Query("SELECT * FROM door")
-    suspend fun getAllDoors(): List<Door>
+    @Query("SELECT * FROM door_table")
+    fun getAllDoors(): List<DoorDto>
 
     @Insert
-    suspend fun insertDoor(door: Door) : Unit
+    fun insertDoor(door: DoorDto)
+
+    @Insert
+    fun insertAllDoors(doors: List<DoorDto>)
 
     @Update
-    suspend fun updateDoor(door: Door): Unit
+    fun updateAllDoors(doors: List<DoorDto>)
+
+    @Update
+    fun updateDoor(door: DoorDto)
 
     @Delete
-    suspend fun deleteDoor(door: Door) : Unit
-
-
+    fun deleteDoor(door: DoorDto)
 }

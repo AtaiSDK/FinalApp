@@ -7,17 +7,22 @@ import androidx.room.Update
 import com.example.finalapp.data.models.Camera
 import com.example.finalapp.data.models.Door
 import com.example.finalapp.domain.models.CameraModel
+import com.example.finalapp.domain.utils.Resource
+import kotlinx.coroutines.flow.Flow
 
 interface CameraRepository {
 
-    suspend fun getAllDoors(): List<CameraModel>
+    suspend fun getRemoteCameras(): Flow<Resource<List<CameraModel>>>
 
-    suspend fun insertCamera(camera: CameraModel) : Unit
+    fun getLocalCameras(): List<CameraModel>
 
-    suspend fun updateCamera(camera: CameraModel): Unit
+    fun insertCamera(cameraModel: CameraModel)
 
-    suspend fun deleteCamera(camera: CameraModel) : Unit
+    fun insertLocalCameras(cameraModels: List<CameraModel>)
 
+    fun updateCamera(cameraModel: CameraModel)
 
+    fun updateLocalCameras(cameraModels: List<CameraModel>)
 
+    fun deleteCamera(cameraModel: CameraModel)
 }

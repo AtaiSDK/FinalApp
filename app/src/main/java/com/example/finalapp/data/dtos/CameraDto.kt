@@ -6,6 +6,7 @@ import com.example.finalapp.domain.models.CameraModel
 import com.example.finalapp.domain.utils.Constants.EMPTY_STRING
 import com.google.gson.annotations.SerializedName
 
+
 data class CamerasDto(
     val data: Data,
     val success: Boolean
